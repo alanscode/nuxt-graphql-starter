@@ -1,0 +1,28 @@
+
+type Session {
+  id: String!
+  game: String!
+  limit: String!
+  location: String!
+  date: String!
+  buyin: Int!
+  cashout: Int!
+}
+
+input SessionInput {
+  game: String!
+  limit: String!
+  location: String!
+  date: String!
+  buyin: Int!
+  cashout: Int!
+}
+
+
+type Query {
+  sessions: [Session]
+}
+
+type Mutation {
+  newSession(session: SessionInput): Session
+}
