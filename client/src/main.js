@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import apolloProvider from './apollo'
+import apolloProvider from './apollo/config'
 
 Vue.config.productionTip = false
 

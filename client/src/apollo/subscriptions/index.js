@@ -5,3 +5,11 @@ subscription {
   }
 }
 `
+
+module.exports.counter2 = `
+subscription {
+  counter {
+    countStr
+  }
+}
+`
