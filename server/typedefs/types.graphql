@@ -26,3 +26,12 @@ type Query {
 type Mutation {
   newSession(session: SessionInput): Session
 }
+
+type Counter {
+    count: Int!
+    countStr: String
+}
+
+type Subscription {
+  counter: Counter!
+}

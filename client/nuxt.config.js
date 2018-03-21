@@ -19,7 +19,7 @@ module.exports = {
   css: [
     '~/assets/style/app.styl'
   ],
-  /*mode: 'spa',*/
+  
   modules: ['@nuxtjs/apollo'],
   apollo: {
     clientConfigs: {

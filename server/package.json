@@ -4,6 +4,8 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "apollo-link-ws": "^1.0.7",
+    "apollo-utilities": "^1.0.10",
     "graphql-yoga": "^1.6.1"
   },
   "devDependencies": {},

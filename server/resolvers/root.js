@@ -8,6 +8,22 @@ const root = {
       return sessions;
     }
   },
+  Counter: {
+    countStr: counter => `Current count: ${counter.count}`
+  },
+  Subscription: {
+    counter: {
+      subscribe: (parent, args, { pubsub }) => {
+        const channel = "1"
+        let count = 0;
+        setInterval(
+          () => pubsub.publish(channel, { counter: { count: count++ } }),
+          2000
+        );
+        return pubsub.asyncIterator(channel);
+      }
+    }
+  },
   Mutation: {
     newSession(root, { session }) {
       session = new Session(session);
