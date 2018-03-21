@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 v-for="message in messages" :key="message.countStr">{{ message.countStr }}</h1>
+    <h1>{{ message }}</h1>
     <!-- <h1>{{ $route.params.id }}</h1> -->
     <router-link to="/">Home</router-link>
   </div>
@@ -8,29 +8,22 @@
 
 <script>
 import { gql } from "apollo-boost";
-
+import subs from '@/apollo/subscriptions'
 export default {
   name: "HelloWorld",
   data() {
     return {
-      messages: []
+      message: ''
     };
   },
   apollo: {
     $subscribe: {
       // When a tag is added
       counter: {
-        query: gql`
-          subscription {
-            counter {
-              countStr
-            }
-          }
-        `,      
+        query: gql(subs.counter),      
         // Result hook
         result(data) {
-          console.log(this.messages)
-          this.messages.push(data.data.counter)
+          this.message = data.data.counter.countStr
         }
       }
     }
