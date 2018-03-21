@@ -18,7 +18,7 @@ const root = {
         let count = 0;
         setInterval(
           () => pubsub.publish(channel, { counter: { count: count++ } }),
-          2000
+          (1000)
         );
         return pubsub.asyncIterator(channel);
       }
