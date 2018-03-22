@@ -8,7 +8,7 @@
 
 <script>
 import { gql } from "apollo-boost";
-import subs from "@/apollo/subscriptions";
+import subscriptions from "@/apollo/subscriptions";
 export default {
   name: "HelloWorld",
   data() {
@@ -20,10 +20,10 @@ export default {
     $subscribe: {
       // When a tag is added
       counter: {
-        query: gql(subs.counter2),
+        query: gql(subscriptions.counter2),
         // Result hook
-        result(data) {
-          this.message = data.data.counter.countStr;
+        result(res) {
+          this.message = res.data.counter.countStr;
         }
       }
     }

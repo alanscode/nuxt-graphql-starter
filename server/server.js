@@ -4,7 +4,7 @@ const resolvers = require("./resolvers/root");
 
 const pubsub = new PubSub();
 const server = new GraphQLServer({
-  typeDefs: "./server/typedefs/types.graphql",
+  typeDefs: "./server/typedefs/typedefs.graphql",
   resolvers,
   context: { pubsub }
 });
